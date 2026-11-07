@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f8f5">
+<title>OverTone — Local AI chat on your Mac</title>
+<meta name="description" content="A free, open-source app for local AI chat on your Mac. Find a model for what you do, refine your prompt, and keep your conversations on your computer.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OverTone — Local AI chat on your Mac">
+<meta property="og:description" content="Your models. Your conversations. Your Mac. Explore the OverTone 0.1 development preview.">
+<meta property="og:image" content="https://overcesare.github.io/OverTone/assets/images/social.jpg">
+<meta property="og:url" content="https://overcesare.github.io/OverTone/">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<link rel="canonical" href="https://overcesare.github.io/OverTone/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="site-config.js" defer></script>
+<script src="clips.js" defer></script>
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="./" aria-label="OverTone home"><img src="assets/mark.svg" width="34" height="34" alt=""><span>OverTone</span></a>
+  <nav aria-label="Main navigation">
+    <a class="nav-tour" href="#in-action">In action</a>
+    <a class="nav-about" href="#about">About</a>
+    <a class="nav-start" href="#get-started">Get started <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>OverTone 0.1 <span class="eyebrow-separator">/</span> Development preview</p>
+    <h1 id="hero-title">Local AI chat.<br><span>On your Mac.</span></h1>
+    <p class="hero-description">Find a model for what you do.<br>Keep the conversation on your computer.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#get-started">Get started <span aria-hidden="true">↗</span></a>
+      <button class="button text-button" type="button" data-trailer><span class="play-small" aria-hidden="true">▶</span> Watch the trailer</button>
+    </div>
+    <p class="compatibility">Free and open source <span aria-hidden="true">·</span> Apple silicon <span aria-hidden="true">·</span> macOS 14+</p>
+  </div>
+  <figure class="hero-figure">
+    <div class="app-frame">
+      <img src="assets/images/hero-1920.webp" srcset="assets/images/hero-960.webp 960w, assets/images/hero-1920.webp 1920w, assets/images/hero-2880.webp 2880w" sizes="(max-width: 680px) calc(100vw - 32px), (max-width: 1200px) calc(100vw - 96px), 1120px" width="4480" height="2800" fetchpriority="high" alt="OverTone with a local Qwen model, a conversation about the birthday paradox, and a follow-up prompt ready to refine.">
+    </div>
+    <figcaption>Actual OverTone interface. Demonstration conversation.</figcaption>
+  </figure>
+  <p class="freedom"><span>Free to use</span><span>No subscription</span><span>No message limits</span></p>
+</section>
+
+<section class="principles section-width" aria-label="Local by choice">
+  <div><p class="section-label">01 / Local</p><h2>Your conversation<br>stays with you.</h2><p>With local models, prompts and replies are processed on your Mac. Conversations and settings are stored there, too.</p></div>
+  <div><p class="section-label">02 / Personal</p><h2>A place for<br>your way of working.</h2><p>Shape a rough idea into a clearer prompt. Pick up an earlier conversation. Choose models suited to your use and your Mac.</p></div>
+  <div><p class="section-label">03 / Open</p><h2>You choose<br>what connects.</h2><p>Internet access starts off. Downloads and remote servers are your choice. The app is open source under Apache 2.0.</p></div>
+</section>
+
+<section id="in-action" class="tour section-width" aria-labelledby="tour-heading">
+  <div class="section-heading"><div><p class="section-label">OverTone in action</p><h2 id="tour-heading">A closer look.</h2></div><p>Short, complete walkthroughs.<br> Choose what you would like to explore.</p></div>
+  <div class="tabs" role="tablist" aria-label="Product walkthroughs">
+    <button role="tab" type="button" id="tab-01" aria-controls="clip-panel" aria-selected="true" data-clip="01">Set up</button>
+    <button role="tab" type="button" id="tab-02" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="02">Chat</button>
+    <button role="tab" type="button" id="tab-03" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="03">Refine a prompt</button>
+    <button role="tab" type="button" id="tab-04" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="04">Find a conversation</button>
+    <button role="tab" type="button" id="tab-06" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="06">Find a model</button>
+    <button role="tab" type="button" id="tab-07" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="07">Make it yours</button>
+    <button role="tab" type="button" id="tab-05" aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="05">Adjust a model</button>
+  </div>
+  <div class="mobile-clip-selector"><label for="clip-select">Explore a walkthrough</label><select id="clip-select">
+    <option value="01">Set up OverTone</option><option value="02">Start a conversation</option><option value="03">Refine a prompt</option><option value="04">Find a conversation</option><option value="06">Find a model</option><option value="07">Make it yours</option><option value="05">Adjust a model</option>
+  </select></div>
+  <div id="clip-panel" class="clip-panel" role="tabpanel" aria-labelledby="tab-01" tabindex="0">
+    <div class="clip-copy"><span class="clip-number" id="clip-number" aria-hidden="true">01</span><div><h3 id="clip-title">Set up OverTone on your Mac</h3><p id="clip-description">Compare three suggested models, install Qwen 3.5 4B with both local engines, and send your first message.</p></div><span class="clip-length" id="clip-duration">55 s</span></div>
+    <div class="clip-stage">
+      <video id="clip-video" controls playsinline preload="none" loading="lazy" poster="assets/images/clip-01.webp" width="3456" height="2168" aria-label="Set up OverTone on your Mac" aria-describedby="clip-description">
+        <source src="assets/media/clip-01.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="assets/media/clip-01.mp4">Open this walkthrough</a>.
+      </video>
+      <button id="clip-play" class="media-play" type="button" aria-label="Play Set up OverTone on your Mac"><span aria-hidden="true">▶</span><span>Play walkthrough</span></button>
+    </div>
+    <div class="clip-note"><span>No narration. Use full screen for a closer view.</span><a id="clip-file" href="assets/media/clip-01.mp4">Open video <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <noscript><p>All walkthroughs: <a href="assets/media/clip-02.mp4">Chat</a> · <a href="assets/media/clip-03.mp4">Refine a prompt</a> · <a href="assets/media/clip-04.mp4">Find a conversation</a> · <a href="assets/media/clip-06.mp4">Find a model</a> · <a href="assets/media/clip-07.mp4">Make it yours</a> · <a href="assets/media/clip-05.mp4">Adjust a model</a>.</p></noscript>
+</section>
+
+<section class="start-section" id="get-started" aria-labelledby="start-heading">
+  <div class="section-width start-grid">
+    <div class="start-intro"><p class="section-label">The first public preview</p><h2 id="start-heading">Start with<br>OverTone.</h2><p>Download OverTone for your Mac, explore what is here, and help shape what comes next.</p><p class="source-note">This development preview is not notarized by Apple. macOS requires your approval the first time you open it. <a href="getting-started.html#first-open">See the first-open steps.</a></p><div class="start-actions"><a class="button primary" href="assets/downloads/OverTone-0.1.0-macos-arm64-preview.dmg" download>Download for Mac <span aria-hidden="true">↓</span></a><a class="button secondary repo-link" hidden href="#get-started">View on GitHub <span aria-hidden="true">↗</span></a></div><p class="build-detail"><a href="assets/downloads/OverTone-source-preview.zip" download>Source code</a> · <a href="getting-started.html#build">Build instructions</a></p></div>
+    <div class="start-instructions">
+      <div class="requirements"><div><span>Runs on</span><strong>Apple silicon<br>macOS 14 or later</strong></div><div><span>Download</span><strong>2.7 MB · DMG<br>No build tools needed</strong></div></div>
+      <ol class="steps">
+        <li><span>01</span><div><h3>Move it to Applications.</h3><p>Open the downloaded DMG and drag OverTone into Applications.</p></div></li>
+        <li><span>02</span><div><h3>Open OverTone.</h3><p>If macOS blocks this preview, go to System Settings → Privacy &amp; Security → Open Anyway. <a href="getting-started.html#first-open">First-open instructions <span aria-hidden="true">↗</span></a></p></div></li>
+        <li><span>03</span><div><h3>Choose a local model.</h3><p>Let setup suggest models for your Mac, reuse an existing installation, or connect a compatible server. You decide when to enable internet access.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about section-width" aria-labelledby="about-heading">
+  <div class="about-copy"><p class="section-label">An independent project</p><h2 id="about-heading">Behind<br>OverTone.</h2><p>OverTone is created and directed by <a href="https://github.com/OverCesare">Cesare Pillai</a>. The aim is to make working with language models feel natural, with local use and a carefully considered experience at its core.</p><p>This is an early development preview. Feedback on the experience, clear bug reports, and thoughtful contributions are welcome.</p><a class="subtle-link" href="community.html">Community and contributions <span aria-hidden="true">↗</span></a></div>
+  <div class="faq"><h3>A few things to know.</h3>
+    <details><summary>Do I need to know which model to choose?</summary><p>No. OverTone gives you a starting selection of models suited to your Mac, then suggests models based on how you use OverTone.</p></details>
+    <details><summary>Does everything run locally?</summary><p>When you use a local model, prompts and replies are processed on your Mac. Internet access is off by default. You decide whether to allow catalogue access, downloads, or a connection to a remote server. A remote server follows the policies of its provider.</p></details>
+    <details><summary>Is it free?</summary><p>OverTone is free and open source under Apache 2.0, with no subscription or message quota. Model and engine licenses are separate. The models you can run depend on your Mac’s available memory and storage.</p></details>
+    <details><summary>What is available in this preview?</summary><p>Local chat, prompt refinement, model discovery and downloads, model suggestions, conversation history, model parameters, and personalization. Documents, Projects, and Tools have prepared interfaces, but their workflows are not implemented yet. Windows and Linux are future targets.</p></details>
+    <details><summary>How can I help?</summary><p>Share how the experience feels, report a reproducible bug, or discuss an idea. Please agree substantial changes with the maintainer before implementing them. Read the <a href="community.html">community guide</a> for the details.</p></details>
+  </div>
+</section>
+</main>
+<footer class="site-footer section-width"><a class="brand" href="./"><img src="assets/mark.svg" width="29" height="29" alt=""><span>OverTone</span></a><p>Local AI chat on your Mac.</p><nav aria-label="Footer"><a href="LICENSE.txt">Apache 2.0</a><a href="https://github.com/OverCesare">OverCesare</a><a href="https://www.youtube.com/@OverTone-App">YouTube</a><a href="privacy.html">Privacy</a></nav></footer>
+
+<dialog id="trailer-dialog" aria-labelledby="trailer-heading">
+  <div class="dialog-header"><h2 id="trailer-heading">Introducing OverTone 0.1</h2><button type="button" id="close-trailer" aria-label="Close trailer">Close <span aria-hidden="true">×</span></button></div>
+  <video id="trailer-video" controls playsinline preload="none" poster="assets/images/trailer.jpg" width="1920" height="1080" aria-label="OverTone 0.1 product trailer"><source src="assets/media/trailer.mp4" type="video/mp4"></video>
+  <div class="dialog-footer"><span>Light · Air and Glass · 48 seconds</span><a id="youtube-link" hidden href="#get-started">Watch on YouTube <span aria-hidden="true">↗</span></a></div>
+</dialog>
+
+</body>
+</html>
