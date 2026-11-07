@@ -7,8 +7,8 @@ OverTone aims to make working with language models feel natural, with a carefull
 If Discussions or the categories below are not available yet, open an issue for questions, ideas, or experience feedback. Security reports follow the separate [security policy](SECURITY.md).
 
 - Bugs: open an issue using the bug report form. Describe what happened, what you expected, and how to reproduce it. Include your OverTone version and macOS version; add the model and engine if relevant. If it happens intermittently, describe the circumstances as clearly as you can.
-- Questions and setup help: use Discussions -> Q&A.
-- Ideas and experience feedback: use Discussions -> Ideas & feedback. Explain what you are trying to do, where the current experience falls short, and any workaround you have tried. You do not need to design a solution or write code.
+- Questions and setup help: use Discussions → Q&A.
+- Ideas and experience feedback: use Discussions → Ideas & feedback. Explain what you are trying to do, where the current experience falls short, and any workaround you have tried. You do not need to design a solution or write code.
 - Security vulnerabilities: follow the [security policy](SECURITY.md), using the repository’s private “Report a vulnerability” option when available. Do not post sensitive details in a public issue or discussion.
 - Updates: see Releases for published versions and their known limitations. The [README](README.md) describes current capabilities and will link to the public roadmap when available.
 
