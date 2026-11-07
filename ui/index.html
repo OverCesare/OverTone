@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="it" data-chrome="mac" class="startup-pending" aria-busy="true">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; frame-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>OverTone</title>
+<link rel="stylesheet" href="app.css">
+<script src="reader.js" defer></script>
+<script src="locale.js" defer>
+</script>
+<script src="markdown.js" defer>
+</script>
+<script src="app.js" defer>
+</script>
+<script src="feedback.js" defer></script>
+<script src="motion.js" defer></script>
+<script src="code.js" defer></script>
+<script src="transcript.js" defer>
+</script>
+<script src="filters.js" defer></script>
+<script src="models.js" defer>
+</script>
+<script src="shell.js" defer>
+</script>
+<script src="model-parameters.js" defer></script>
+<script src="details.js" defer></script>
+<script src="appearance.js" defer></script>
+<script src="setup.js" defer></script>
+<script src="connection.js" defer></script>
+<script src="advice.js" defer></script>
+<script src="guidance.js" defer></script>
+</head>
+<body>
+<div id="startup-cover" role="status" aria-label="OverTone"><div id="startup-emblem"><img src="OverTone.svg" alt="" draggable="false"></div></div>
+<!--
+Third-party SVG icons: Lucide, revision 2ca268e74888d3506b3319fb8f94aaaaf70ceca9
+https://lucide.dev/license
+ISC License
+
+Copyright (c) 2026 Lucide Icons and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+—-
+
+The following Lucide icons are derived from the Feather project:
+
+airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out
+
+The MIT License (MIT) (for the icons listed above)
+
+Copyright (c) 2013-present Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Only the symbols present below are included; no library runtime.
+-->
+<svg class="symbol-definitions" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></symbol>
+<symbol id="i-wrap-text" viewBox="0 0 24 24"><path d="M3 5h18M3 10h13a4 4 0 0 1 0 8h-5m3-3-3 3 3 3M3 15h3M3 20h3"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></symbol>
+<symbol id="i-messages-square" viewBox="0 0 24 24">
+  <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
+</symbol>
+<symbol id="i-box" viewBox="0 0 24 24">
+  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+  <path d="m3.3 7 8.7 5 8.7-5" />
+  <path d="M12 22V12" />
+</symbol>
+<symbol id="i-library" viewBox="0 0 24 24">
+  <path d="m16 6 4 14" />
+  <path d="M12 6v14" />
+  <path d="M8 8v12" />
+  <path d="M4 4v16" />
+</symbol>
+<symbol id="i-folder-open" viewBox="0 0 24 24">
+  <path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" />
+</symbol>
+<symbol id="i-blocks" viewBox="0 0 24 24">
+  <path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+  <rect x="14" y="2" width="8" height="8" rx="1" />
+</symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Zm0 6v5m0 3v.5"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24">
+  <path d="m16 18 6-6-6-6" />
+  <path d="m8 6-6 6 6 6" />
+</symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.52a2 2 0 0 1-1 1.72l-.15.1a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.52a2 2 0 0 1 1-1.72l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z"/>
+<circle cx="12" cy="12" r="3"/>
+</symbol>
+<symbol id="i-sliders-horizontal" viewBox="0 0 24 24">
+  <path d="M10 5H3" />
+  <path d="M12 19H3" />
+  <path d="M14 3v4" />
+  <path d="M16 17v4" />
+  <path d="M21 12h-9" />
+  <path d="M21 19h-5" />
+  <path d="M21 5h-7" />
+  <path d="M8 10v4" />
+  <path d="M8 12H3" />
+</symbol>
+<symbol id="i-thumbs-up" viewBox="0 0 24 24">
+  <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+  <path d="M7 10v12" />
+</symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24">
+  <path d="m6 9 6 6 6-6" />
+</symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24">
+  <path d="m9 18 6-6-6-6" />
+</symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24">
+  <path d="m15 18-6-6 6-6" />
+</symbol>
+<symbol id="i-panel-left" viewBox="0 0 24 24">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M9 3v18" />
+</symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></symbol>
+<symbol id="i-ellipsis" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24">
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</symbol>
+<symbol id="i-x" viewBox="0 0 24 24">
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="m10 7 3-3a5 5 0 0 1 7 7l-3 3M14 17l-3 3a5 5 0 0 1-7-7l3-3M8 16l8-8"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M12 6.5h5M12 17.5h5"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24">
+  <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+</symbol>
+<symbol id="i-list-filter" viewBox="0 0 24 24">
+  <path d="M2 5h20" />
+  <path d="M6 12h12" />
+  <path d="M9 19h6" />
+</symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24">
+  <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+  <path d="m15 5 4 4" />
+</symbol>
+<symbol id="i-git-branch" viewBox="0 0 24 24">
+  <path d="M15 6a9 9 0 0 0-9 9V3" />
+  <circle cx="18" cy="6" r="3" />
+  <circle cx="6" cy="18" r="3" />
+</symbol>
+<symbol id="i-copy" viewBox="0 0 24 24">
+  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+</symbol>
+<symbol id="i-rotate-ccw" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" />
+</symbol>
+<symbol id="i-paperclip" viewBox="0 0 24 24">
+  <path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551" />
+</symbol>
+<symbol id="i-globe" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24">
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</symbol>
+<symbol id="i-brain" viewBox="0 0 24 24">
+  <path d="M12 18V5" />
+  <path d="M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4" />
+  <path d="M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294" />
+  <path d="M17.996 5.125a4 4 0 012.526 5.77" />
+  <path d="M18 18a4 4 0 002-7.465" />
+  <path d="M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517" />
+  <path d="M6 18a4 4 0 01-2-7.465" />
+  <path d="M6.004 5.125a4 4 0 00-2.526 5.77" />
+</symbol>
+<symbol id="i-wand-sparkles" viewBox="0 0 24 24">
+  <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+  <path d="m14 7 3 3" />
+  <path d="M5 6v4" />
+  <path d="M19 14v4" />
+  <path d="M10 2v2" />
+  <path d="M7 8H3" />
+  <path d="M21 16h-4" />
+  <path d="M11 3H9" />
+</symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24">
+  <path d="m5 12 7-7 7 7" />
+  <path d="M12 19V5" />
+</symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24">
+  <path d="M12 5v14" />
+  <path d="m19 12-7 7-7-7" />
+</symbol>
+<symbol id="i-download" viewBox="0 0 24 24">
+  <path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" />
+</symbol>
+<symbol id="i-hard-drive" viewBox="0 0 24 24">
+  <path d="M10 16h.01" />
+  <path d="M2.212 11.577a2 2 0 0 0-.212.896V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.527a2 2 0 0 0-.212-.896L18.55 5.11A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+  <path d="M21.946 12.013H2.054" />
+  <path d="M6 16h.01" />
+</symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24">
+  <path d="M12 20v2" />
+  <path d="M12 2v2" />
+  <path d="M17 20v2" />
+  <path d="M17 2v2" />
+  <path d="M2 12h2" />
+  <path d="M2 17h2" />
+  <path d="M2 7h2" />
+  <path d="M20 12h2" />
+  <path d="M20 17h2" />
+  <path d="M20 7h2" />
+  <path d="M7 20v2" />
+  <path d="M7 2v2" />
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <rect x="8" y="8" width="8" height="8" rx="1" />
+</symbol>
+<symbol id="i-memory-stick" viewBox="0 0 24 24">
+  <path d="M12 12v-2" />
+  <path d="M12 18v-2" />
+  <path d="M16 12v-2" />
+  <path d="M16 18v-2" />
+  <path d="M2 11h1.5" />
+  <path d="M20 18v-2" />
+  <path d="M20.5 11H22" />
+  <path d="M4 18v-2" />
+  <path d="M8 12v-2" />
+  <path d="M8 18v-2" />
+  <rect x="2" y="6" width="20" height="10" rx="2" />
+</symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24">
+  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+</symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24">
+  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M10 9H8" />
+  <path d="M16 13H8" />
+  <path d="M16 17H8" />
+</symbol>
+<symbol id="i-folder-input" viewBox="0 0 24 24">
+  <path d="M2 9V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1" />
+  <path d="M2 13h10" />
+  <path d="m9 16 3-3-3-3" />
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24">
+  <path d="M20 6 9 17l-5-5" />
+</symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-circle-minus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+<symbol id="i-progress-ring" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="8.5" opacity=".22"/>
+<path d="M12 3.5a8.5 8.5 0 0 1 8.5 8.5" stroke-linecap="round"/>
+</symbol>
+<symbol id="i-loader" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-dasharray="42 15"/></symbol>
+<symbol id="i-clock-3" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6h4" />
+</symbol>
+<symbol id="i-pause" viewBox="0 0 24 24">
+  <rect x="14" y="3" width="5" height="18" rx="1" />
+  <rect x="5" y="3" width="5" height="18" rx="1" />
+</symbol>
+<symbol id="i-play" viewBox="0 0 24 24">
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+</symbol>
+<symbol id="i-archive" viewBox="0 0 24 24">
+  <rect width="20" height="5" x="2" y="3" rx="1" />
+  <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+  <path d="M10 12h4" />
+</symbol>
+<symbol id="i-info" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 11v6M12 7h.01"/>
+</symbol>
+<symbol id="i-moon" viewBox="0 0 24 24">
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</symbol>
+<symbol id="i-sun" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24">
+  <path d="M12 5v16" />
+  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
+</symbol>
+<symbol id="i-calculator" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h1m6 0h1m-8 4h1m6 0h1m-8 4h1m6 0h1"/></symbol><symbol id="i-gauge" viewBox="0 0 24 24">
+<path d="M4 18a9 9 0 1 1 16 0M5 18h14M12 13l5-6M5 12h1M8 6l1 1M16 6l-1 1M18 12h1"/>
+<circle cx="12" cy="13" r="1.5"/>
+</symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24">
+<path d="M20 3C9 2 3 7 4 13s10 8 14 1c2-3 2-7 2-11ZM3 21 16 8"/>
+</symbol>
+<symbol id="i-scale" viewBox="0 0 24 24">
+<path d="M12 3v18M5 21h14M4 7h16M4 7 1 14h6L4 7ZM20 7l-3 7h6l-3-7Z"/>
+</symbol>
+<symbol id="i-workflow" viewBox="0 0 24 24">
+  <rect width="8" height="8" x="3" y="3" rx="2" />
+  <path d="M7 11v4a2 2 0 0 0 2 2h4" />
+  <rect width="8" height="8" x="13" y="13" rx="2" />
+</symbol>
+<symbol id="i-external-link" viewBox="0 0 24 24">
+  <path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+</symbol>
+<symbol id="i-trash" viewBox="0 0 24 24">
+<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/>
+</symbol>
+<symbol id="i-square" viewBox="0 0 24 24">
+<rect x="5" y="5" width="14" height="14" rx="2"/>
+</symbol>
+</defs>
+</svg>
+<a class="skip" href="#prompt">Vai al messaggio</a>
+<header class="shell-topbar">
+<div class="shell-brand">
+
+<button type="button" class="brand" data-route="chat" aria-label="OverTone, apri Chat">
+<span id="brand-mark" class="logo"><img src="OverTone.svg" alt="" draggable="false"></span>
+<span>
+<strong>OverTone</strong>
+<small id="area-label">Chat</small>
+</span>
+</button>
+</div>
+<nav class="top-navigation" aria-label="Navigazione">
+<button type="button" id="nav-chat" data-route="chat" aria-label="Chat" data-tip="Chat" aria-current="page">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-messages-square"/>
+</svg>
+<span>Chat</span>
+</button>
+<button type="button" id="nav-models" class="notice-control" data-route="models" aria-label="Modelli" data-tip="Modelli" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-box"/>
+</svg>
+<span>Modelli</span><b id="model-advice-dot" class="unread-indicator control-notice" hidden aria-hidden="true"></b>
+</button>
+<button type="button" id="nav-knowledge" data-route="knowledge" aria-label="Documenti" data-tip="Documenti" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-library"/>
+</svg>
+<span>Documenti</span>
+</button>
+<button type="button" id="nav-projects" data-route="projects" aria-label="Progetti" data-tip="Progetti" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-folder-open"/>
+</svg>
+<span>Progetti</span>
+</button>
+<button type="button" id="nav-tools" data-route="tools" aria-label="Strumenti" data-tip="Strumenti" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-blocks"/>
+</svg>
+<span>Strumenti</span>
+</button>
+</nav>
+<div class="shell-top-actions">
+<div class="model-control">
+<button type="button" id="configure" class="icon-button" aria-label="Parametri del modello" data-tip="Parametri del modello" aria-haspopup="dialog">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-cpu"/>
+</svg>
+<span id="active-model">Nessun modello</span>
+</button>
+<span id="runtime-dot" role="img" tabindex="0" aria-label="Nessun modello">
+</span>
+<button type="button" id="model-menu" class="icon-button" aria-label="Scegli modello" data-tip="Scegli modello" aria-haspopup="dialog">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-chevron-down"/>
+</svg>
+</button>
+</div>
+<button type="button" id="download-indicator" class="icon-button download-indicator" aria-label="Attività download" data-tip="Attività download">
+<svg class="download-ring" viewBox="0 0 40 40" aria-hidden="true">
+<circle cx="20" cy="20" r="17"/>
+<circle id="download-arc" cx="20" cy="20" r="17"/>
+</svg>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-download"/>
+</svg>
+</button>
+<button type="button" id="preferences" class="icon-button" aria-label="Impostazioni" data-tip="Impostazioni" aria-haspopup="dialog">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-settings"/>
+</svg>
+</button>
+<button type="button" id="toggle-details" class="icon-button" aria-label="Apri dettagli" data-tip="Apri dettagli" aria-expanded="false" aria-pressed="false" aria-controls="details-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-panel-left" transform="translate(24 0) scale(-1 1)"/></svg></button>
+</div>
+</header>
+<div class="shell-content">
+<div class="workspace-clip">
+<div class="workspaces">
+<section class="chat-layout" id="chat-workspace">
+<aside class="history panel" id="history-rail">
+<div class="rail-heading">
+<div id="history-filter" role="tablist" aria-label="Vista cronologia">
+<button type="button" role="tab" id="history-view-0" data-history-view="0" aria-label="Conversazioni" data-tip="Conversazioni" aria-selected="true" aria-controls="chats" tabindex="0"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-messages-square"/></svg><span>Conversazioni</span></button>
+<button type="button" role="tab" id="history-view-1" data-history-view="1" aria-label="Archivio" data-tip="Archivio" aria-selected="false" aria-controls="chats" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-archive"/></svg><span>Archivio</span></button>
+<button type="button" role="tab" id="history-view-2" data-history-view="2" aria-label="Cestino" data-tip="Cestino" aria-selected="false" aria-controls="chats" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trash"/></svg><span>Cestino</span></button>
+</div>
+<button type="button" id="new" class="icon-button constructive" aria-label="Nuova conversazione" data-tip="Nuova conversazione">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-plus"/>
+</svg>
+
+</button>
+</div>
+<div class="history-controls">
+<div class="search-control flow-surface">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-search"/>
+</svg>
+<input id="search" type="search" aria-label="Cerca conversazioni" placeholder="Cerca una parola o frase" maxlength="240">
+<button type="button" id="clear-search" class="icon-button" aria-label="Cancella ricerca" data-tip="Cancella ricerca" hidden><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+<button type="button" id="chat-filters-toggle" class="icon-button" aria-label="Filtri conversazioni" data-tip="Filtri conversazioni" aria-expanded="false" aria-controls="chat-filters">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-list-filter"/>
+</svg>
+</button>
+</div>
+
+<div id="active-chat-filters" class="filter-chips"></div>
+<div id="chat-filters" class="chat-filters" hidden>
+<label>Ordina<select id="chat-sort"><option value="0">Più recenti</option><option value="1">Meno recenti</option><option value="2">Titolo A–Z</option><option value="3">Titolo Z–A</option><option value="4">Più messaggi</option><option value="5">Meno messaggi</option><option value="6">Rilevanza</option></select></label>
+<fieldset><legend>Data</legend><div class="row filter-date-shortcuts"><button type="button" data-date-days="7">Ultimi 7 giorni</button><button type="button" data-date-days="30">Ultimi 30 giorni</button></div><div class="two-fields"><label>Dal<span class="date-control"><input type="date" id="chat-from" data-empty="true"><span class="date-empty" aria-hidden="true">Qualsiasi</span></span></label><label>Al<span class="date-control"><input type="date" id="chat-to" data-empty="true"><span class="date-empty" aria-hidden="true">Qualsiasi</span></span></label></div></fieldset>
+<fieldset id="chat-model-filters" hidden><legend>Modelli</legend><div id="chat-model-options"></div></fieldset>
+<fieldset id="chat-runtime-filters" hidden><legend>Motore o collegamento</legend><div id="chat-runtime-options"></div></fieldset>
+<fieldset><legend>Contenuto</legend><label class="check"><input type="checkbox" id="chat-code">Codice</label>
+<label class="check"><input type="checkbox" id="chat-errors">Errori</label>
+<label class="check"><input type="checkbox" id="chat-compacted">Contesto riassunto</label></fieldset>
+<fieldset><legend>Numero di messaggi</legend><div class="two-fields"><label>Minimo<input type="number" id="chat-min" min="0" max="10000000"></label><label>Massimo<input type="number" id="chat-max" min="0" max="10000000"></label></div></fieldset>
+<p id="chat-filter-error" role="status"></p><button type="button" id="chat-filter-reset">Azzera filtri</button>
+</div>
+
+</div>
+<div id="history-body">
+<div id="chats" role="tabpanel" aria-labelledby="history-view-0">
+<div id="conversation-list"></div>
+</div>
+</div>
+<div id="history-actions" class="history-footer" hidden><button type="button" id="restore-archive" class="constructive" hidden><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span>Ripristina tutto</span></button><button type="button" id="empty-trash" class="danger" hidden><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg><span>Svuota cestino</span></button></div>
+
+</aside>
+<main class="chat-panel panel">
+<div class="chat-heading flow-surface">
+<button type="button" id="open-history" class="icon-button" aria-label="Apri cronologia" data-tip="Apri cronologia" aria-expanded="false" aria-controls="history-rail">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-panel-left"/>
+</svg>
+</button>
+
+<span class="chat-icon">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-messages-square"/>
+</svg>
+</span>
+<div>
+<small>WORKSPACE</small>
+<h1><button type="button" id="chat-title" disabled>Chat</button></h1>
+</div>
+<span class="grow">
+</span>
+<div class="chat-heading-actions flow-anchor"><button type="button" id="move-project" class="icon-button" aria-label="Sposta nel progetto · non ancora disponibile" data-tip="Sposta nel progetto · non ancora disponibile" disabled><svg class="icon" aria-hidden="true"><use href="#i-folder-open"/></svg></button><button type="button" id="archive-chat" class="icon-button" aria-label="Archivia" data-tip="Archivia"><svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg></button><button type="button" id="restore-chat" class="icon-button constructive" aria-label="Ripristina conversazione" data-tip="Ripristina conversazione" hidden><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg></button><button type="button" id="trash-chat" class="icon-button danger" aria-label="Sposta nel cestino" data-tip="Sposta nel cestino" aria-haspopup="menu" aria-expanded="false" aria-controls="chat-removal" popovertarget="chat-removal"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg></button></div>
+
+</div>
+<div class="reading-slot"><div class="reading-pane">
+<span class="reading-focus" aria-hidden="true"></span>
+<span class="reading-fade-top" aria-hidden="true"></span><span class="reading-fade-bottom" aria-hidden="true"></span>
+<div class="reading-content">
+<div id="transcript" tabindex="0" aria-label="Conversazione">
+<p class="empty">Da dove cominciamo?</p>
+</div>
+</div>
+<div class="reading-actions">
+<button type="button" id="older" hidden>Messaggi precedenti</button>
+<button type="button" id="latest" class="icon-button" aria-label="Ultimi messaggi" data-tip="Ultimi messaggi" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron-down"/></svg><span id="stream-activity" class="typing-dots" aria-label="Generazione in corso" role="status" hidden><i></i><i></i><i></i></span></button>
+</div>
+</div>
+</div>
+<div id="notice" role="status" aria-live="polite" aria-label="Stato di OverTone" hidden>
+</div>
+<section id="chat-readonly" class="chat-readonly" aria-label="Chat in sola lettura" hidden><svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg><p id="readonly-message" role="status"></p><button type="button" id="stop-readonly" class="icon-button danger" aria-label="Interrompi" data-tip="Interrompi" hidden><svg class="icon" aria-hidden="true"><use href="#i-square"/></svg></button><button type="button" id="restore-readonly" class="constructive"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span>Ripristina</span></button></section>
+<form id="composer">
+<div class="composer-writing">
+<section id="suggestion-panel" class="suggestion-panel" hidden aria-labelledby="suggestion-heading">
+<header class="suggestion-heading"><h2 id="suggestion-heading">Revisione del prompt</h2><button type="button" id="accept-suggestion" class="icon-button constructive" aria-label="Usa questo prompt" data-tip="Usa questo prompt"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></button><button type="button" id="discard-suggestion" class="icon-button" aria-label="Chiudi revisione" data-tip="Chiudi revisione"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></header>
+<textarea id="suggestion" class="compose-text" aria-labelledby="suggestion-heading" rows="2" maxlength="16384"></textarea>
+<section class="original-prompt" hidden><h3>Prompt originale</h3><p id="original-prompt"></p></section>
+<p id="suggestion-warning" role="status" hidden></p></section>
+
+<div class="compose-entry">
+<textarea id="prompt" class="compose-text" aria-label="Messaggio" placeholder="Scrivi un messaggio" maxlength="16384" rows="2">
+</textarea>
+<div class="compose-toolbar" data-compose-anchor>
+<div class="compose-context compose-palette" role="group" aria-label="Allegati e documenti">
+<button type="button" id="attach-file" class="icon-button" aria-label="Allega file · non ancora disponibile" data-tip="Allega file · non ancora disponibile" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-paperclip"/>
+</svg>
+</button>
+<button type="button" id="attach-knowledge" class="icon-button" aria-label="Documenti · non ancora disponibile" data-tip="Documenti · non ancora disponibile" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-library"/>
+</svg>
+</button>
+</div>
+
+<div id="compose-tools" class="compose-tools" role="group" aria-label="Comandi del messaggio">
+<button type="button" class="icon-button thinking-button" id="thinking-control" aria-label="Ragionamento" data-tip="Ragionamento" aria-haspopup="menu" aria-expanded="false" aria-controls="thinking-popover">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-brain"/>
+</svg>
+
+</button>
+<button data-overflow="4" data-command-label="Ricerca web" type="button" id="research" class="icon-button" aria-label="Ricerca web · non ancora disponibile" data-tip="Ricerca web · non ancora disponibile" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-globe"/>
+</svg>
+</button>
+<button data-overflow="1" data-command-label="Accuratezza" type="button" id="accuracy" class="icon-button" aria-label="Accuratezza · non ancora disponibile" data-tip="Accuratezza · non ancora disponibile" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-target"/>
+</svg>
+</button>
+<button data-overflow="3" data-command-label="Strumenti" type="button" id="chat-tools" class="icon-button" aria-label="Strumenti · non ancora disponibili" data-tip="Strumenti · non ancora disponibili" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-blocks"/>
+</svg>
+</button>
+<button type="button" id="compose-more" class="icon-button" aria-label="Altri comandi" data-tip="Altri comandi" aria-haspopup="menu" aria-controls="compose-overflow" aria-expanded="false" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ellipsis"/></svg></button>
+</div>
+<div class="compose-send-actions compose-palette" role="group" aria-label="Revisione e invio">
+<button type="button" id="improve" class="icon-button" aria-label="Migliora prompt" data-tip="Migliora prompt" aria-controls="suggestion-panel" aria-expanded="false" aria-pressed="false" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-wand-sparkles"/>
+</svg>
+</button>
+<button type="button" id="dictation" class="icon-button" disabled aria-label="Dettatura · non ancora disponibile" data-tip="Dettatura · non ancora disponibile"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
+<button id="stop" type="button" class="send-icon" aria-label="Interrompi" data-tip="Interrompi" hidden>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-square"/>
+</svg>
+</button>
+<button id="send" type="submit" class="send-icon" aria-label="Invia messaggio">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-arrow-up"/>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<p id="input-limit-error" role="status" data-compose-anchor hidden></p>
+</div>
+</form>
+</main>
+</section>
+<section id="model-workspace" class="model-layout" hidden>
+<aside class="panel model-sidebar">
+<div class="rail-heading">
+<div>
+<small>MODELLI</small>
+<h2>Libreria locale</h2>
+</div>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-hard-drive"/>
+</svg>
+</div>
+<div role="tablist" aria-label="Modelli">
+<button type="button" id="tab-installed" role="tab" aria-selected="true">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-box"/>
+</svg>
+<span>Installati</span>
+<small id="installed-count">0</small>
+</button>
+<button type="button" id="tab-search" role="tab" aria-selected="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-search"/>
+</svg>
+<span>Trova</span>
+</button>
+<button type="button" id="tab-activity" role="tab" aria-selected="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-download"/>
+</svg>
+<span>Attività</span>
+<small id="activity-count">0</small>
+</button>
+</div>
+</aside>
+<section class="panel models-content">
+<header class="page-heading flow-surface">
+<div>
+<small>MODELLI</small>
+<h1 id="model-view-title">Installati</h1>
+</div>
+<div class="row toolbar-actions flow-anchor">
+<button type="button" id="show-advice" class="notice-control"><svg class="icon" aria-hidden="true"><use href="#i-thumbs-up"/></svg><span>Consigliati per te</span><b id="advice-button-dot" class="unread-indicator control-notice" hidden aria-hidden="true"></b></button><div class="row library-toolbar-actions">
+<button type="button" id="discover-models" class="icon-button" aria-label="Rileva modelli locali" data-tip="Rileva modelli locali" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-rotate-ccw"/>
+</svg>
+</button>
+</div>
+</div>
+</header>
+<p id="model-error" role="status">
+</p>
+<div class="model-view-surface">
+<div class="model-view-content">
+
+<div id="models-installed" role="tabpanel">
+<div class="model-filters">
+<input id="installed-query" type="search" aria-label="Cerca installati" placeholder="Cerca installati">
+
+</div>
+<div id="model-list">
+</div>
+</div>
+<div id="models-search" role="tabpanel" hidden>
+<aside id="engine-notice" class="engine-notice flow-surface" hidden></aside>
+<div id="catalog-policy" class="catalog-policy flow-surface" hidden><span>Cataloghi online disattivati</span><button type="button" id="enable-catalogues">Attiva</button></div><div class="model-sources"><button id="catalog-back" type="button" class="icon-button flow-anchor" aria-label="Torna al catalogo" data-tip="Torna al catalogo" hidden><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button><div id="catalog-scopes" class="segmented-control" role="tablist" aria-label="Catalogo"><button type="button" data-catalog="hf" role="tab" aria-selected="true">Hugging Face</button><button type="button" data-catalog="ollama" role="tab" aria-selected="false">Ollama</button></div><span id="model-source-heading" hidden></span><span class="grow"></span><button id="acquire-file" type="button" class="icon-button constructive flow-anchor" aria-label="Importa file GGUF" data-tip="Importa file GGUF"><svg class="icon" aria-hidden="true"><use href="#i-folder-input"/></svg></button><button id="acquire-url" type="button" class="icon-button constructive flow-anchor" aria-label="Scarica da link" data-tip="Scarica da link"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button></div>
+<section data-source-page="hf">
+<form id="model-search-form" class="search-row">
+<input id="model-query" aria-label="Cerca modelli Hugging Face" placeholder="Cerca modelli o repository" maxlength="256">
+<button id="model-search-button" class="icon-button catalog-submit" aria-label="Cerca" data-tip="Cerca">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-search"/>
+</svg></button>
+</form>
+<div id="catalog-columns" class="catalog-columns">
+<div id="model-results">
+</div>
+<section id="variant-panel" aria-labelledby="variant-title" class="catalog-variants flow-surface" hidden>
+<h3 id="variant-title" class="flow-anchor">
+</h3>
+<div id="variant-list" class="variant-list">
+</div>
+</section>
+</div>
+</section>
+<section data-source-page="ollama" hidden>
+<form id="ollama-search-form" class="search-row">
+<input id="ollama-query" aria-label="Cerca modelli Ollama" placeholder="Cerca modelli o tag" maxlength="256">
+<button id="ollama-search-button" class="icon-button catalog-submit" aria-label="Cerca" data-tip="Cerca">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-search"/>
+</svg></button>
+</form>
+<div class="catalog-columns">
+<div id="ollama-results"></div>
+<section id="ollama-variant-panel" aria-labelledby="ollama-variant-title" class="catalog-variants flow-surface" hidden>
+<h3 id="ollama-variant-title" class="flow-anchor"></h3>
+<div id="ollama-variants" class="variant-list"></div>
+</section>
+</div>
+</section>
+<section data-source-page="url" hidden>
+<form id="download-form">
+<label>URL HTTPS<input id="download-url" type="url" maxlength="8192" required>
+</label>
+<label>SHA-256<input id="download-checksum" pattern="[0-9a-fA-F]{64}" maxlength="64" required>
+</label>
+<button class="primary">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-download"/>
+</svg>Scarica</button>
+</form>
+</section>
+<section data-source-page="file" hidden>
+<p>Registra un riferimento a un file GGUF compatibile sul computer.</p>
+<button type="button" id="import-from-source" class="constructive">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-folder-input"/>
+</svg>Scegli file GGUF</button>
+<div id="import-preview"></div>
+</section>
+</div>
+<div id="models-activity" role="tabpanel" hidden>
+<div class="model-filters">
+<input id="activity-query" type="search" aria-label="Cerca attività" placeholder="Cerca attività">
+
+</div>
+<div id="download-list">
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="prepared-workspace" class="prepared-layout" hidden>
+<aside class="panel contextual-rail">
+<div class="rail-heading">
+<div>
+
+<h2 id="contextual-title">
+</h2>
+</div>
+</div>
+<div class="contextual-search">
+<div class="search-control flow-surface">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg>
+<input id="prepared-search" type="search" disabled>
+<button type="button" class="icon-button" aria-label="Filtri" disabled>
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-list-filter"/>
+</svg>
+</button>
+</div>
+</div>
+<div id="contextual-items">
+</div>
+</aside>
+<main class="panel prepared-content" id="prepared-content">
+</main>
+</section>
+</div>
+</div>
+<aside class="detail panel floating-panel" id="details-panel" aria-labelledby="details-title" inert>
+<div class="details-expanded">
+<header class="details-heading">
+<div>
+<h2 id="details-title">Dettagli</h2>
+<small id="details-subtitle">Chat</small>
+</div>
+
+</header>
+<div class="details-body">
+<div id="memory" hidden>
+<div id="memory-label">Memoria</div>
+<div id="memory-bar" class="meter-track" role="progressbar" aria-labelledby="memory-label"><i class="memory-system"></i></div>
+<small id="memory-value">
+</small>
+</div>
+<div id="details-tabs" class="details-tabs segmented-control" role="tablist" aria-label="Dettagli"></div>
+<div id="details-content" role="tabpanel"></div>
+</div>
+</div>
+</aside>
+</div>
+  <dialog id="settings" aria-labelledby="settings-heading">
+      <div class="dialog-heading">
+<h2 id="settings-heading">Collega un server</h2>
+<button id="close-settings" class="icon-button" type="button" aria-label="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+</div>
+    <form id="connection-form" class="connection-form">
+<div class="connection-body">
+<label>Server<input id="endpoint" placeholder="server.example.com" required spellcheck="false" autocomplete="off"></label>
+<div class="connection-options-row"><label class="check"><span>HTTPS</span><input id="connection-https" type="checkbox" role="switch" checked></label></div>
+<div class="settings-fields"><label>Protocollo<select id="protocol"><option value="auto">Automatico</option><option value="ollama">Ollama</option><option value="openai">OpenAI compatibile</option></select></label></div>
+<div id="connection-network" class="catalog-policy" hidden><span>Accesso a Internet non consentito per questa funzione.</span><button id="enable-remote-server" type="button">Abilita server remoti</button></div>
+<div id="connection-http-warning" class="app-feedback" data-kind="warning" role="status" hidden></div>
+<label class="check"><span>Chiave API</span><input id="connection-auth" type="checkbox" role="switch"></label>
+<div id="connection-auth-fields" class="settings-fields" hidden><label class="connection-key"><span class="sr-only">Chiave API</span><input id="key" type="password" autocomplete="off" maxlength="4096"></label><label class="check"><span>Ricorda su questo Mac</span><input id="connection-remember" type="checkbox" role="switch" checked></label></div>
+<div id="connection-models" class="settings-fields" hidden><label>Modello<select id="model"></select></label><div id="connection-preview"></div></div>
+</div>
+<div class="dialog-footer"><div id="connection-progress" class="configuration-ready" role="status" hidden></div><p id="settings-error" role="alert" data-feedback hidden></p><button id="connection-test" type="button" class="constructive"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span data-text-key="@connection.test">Verifica</span></button><button id="save-settings" type="submit" class="primary" hidden>Collega</button></div>
+</form>
+  </dialog>
+<dialog id="preferences-dialog" aria-labelledby="preferences-heading">
+<form id="preferences-form">
+<div class="dialog-heading">
+<h2 id="preferences-heading">Impostazioni</h2>
+<button type="button" id="close-preferences" class="icon-button" aria-label="Chiudi" data-tip="Chiudi" >
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-x"/>
+</svg>
+</button>
+</div>
+<div class="preferences-layout">
+<nav aria-label="Categorie impostazioni">
+<button type="button" data-settings-section="appearance" aria-current="true">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-sun"/>
+</svg>
+<span>Aspetto</span>
+</button>
+<button type="button" data-settings-section="models" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-cpu"/>
+</svg>
+<span>Modelli</span>
+</button>
+<button type="button" data-settings-section="chat" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-messages-square"/>
+</svg>
+<span>Chat</span>
+</button>
+<button type="button" data-settings-section="privacy" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-shield-check"/>
+</svg>
+<span>Privacy</span>
+</button>
+<button type="button" data-settings-section="storage" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-hard-drive"/>
+</svg>
+<span>Archiviazione</span>
+</button>
+<button type="button" data-settings-section="knowledge" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-library"/>
+</svg>
+<span>Documenti</span>
+</button>
+<button type="button" data-settings-section="tools" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-blocks"/>
+</svg>
+<span>Strumenti</span>
+</button>
+<button type="button" data-settings-section="api" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-cloud"/>
+</svg>
+<span>API</span>
+</button>
+<button type="button" data-settings-section="diagnostics" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-code"/>
+</svg>
+<span>Diagnostica</span>
+</button>
+<button type="button" data-settings-section="labs" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-workflow"/>
+</svg>
+<span>Sperimentale</span>
+</button>
+<button type="button" data-settings-section="about" aria-current="false">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<use href="#i-info"/>
+</svg>
+<span>Informazioni</span>
+</button>
+</nav>
+<div class="preferences-content">
+<section class="preferences-section" data-settings-page="appearance">
+<h3>Aspetto</h3><div class="settings-fields">
+<label>Lingua dell’applicazione<select data-pref="language" translate="no"><option value="it" translate="no">Italiano</option><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="ru">Русский</option><option value="zh">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+<label class="setting-row check"><span>Mostra tooltip</span><input data-pref="tooltips" type="checkbox" role="switch"></label>
+<div class="setting-row"><span id="theme-label">Tema</span><div><select data-pref="theme" hidden aria-hidden="true" tabindex="-1"><option value="system">Sistema</option><option value="dark">Scuro</option><option value="light">Chiaro</option></select><div class="visual-choices" data-choice-field="theme" role="radiogroup" aria-labelledby="theme-label"><button type="button" role="radio" data-value="light"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg>Chiaro</button><button type="button" role="radio" data-value="dark"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>Scuro</button><button type="button" role="radio" data-value="system"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg>Sistema</button></div></div></div>
+<div class="setting-row"><span id="accent-label">Colore</span><div><select data-pref="accent" hidden aria-hidden="true" tabindex="-1"><option value="blue">Blu</option><option value="purple">Viola</option><option value="teal">Turchese</option><option value="green">Verde</option><option value="amber">Ambra</option><option value="rose">Rosa</option></select><div class="visual-choices accent-choices" data-choice-field="accent" role="radiogroup" aria-labelledby="accent-label"><button type="button" role="radio" data-value="blue" aria-label="Blu" data-tip="Blu"><i class="color-swatch swatch-blue" aria-hidden="true"></i></button><button type="button" role="radio" data-value="purple" aria-label="Viola" data-tip="Viola"><i class="color-swatch swatch-purple" aria-hidden="true"></i></button><button type="button" role="radio" data-value="teal" aria-label="Turchese" data-tip="Turchese"><i class="color-swatch swatch-teal" aria-hidden="true"></i></button><button type="button" role="radio" data-value="green" aria-label="Verde" data-tip="Verde"><i class="color-swatch swatch-green" aria-hidden="true"></i></button><button type="button" role="radio" data-value="amber" aria-label="Ambra" data-tip="Ambra"><i class="color-swatch swatch-amber" aria-hidden="true"></i></button><button type="button" role="radio" data-value="rose" aria-label="Rosa" data-tip="Rosa"><i class="color-swatch swatch-rose" aria-hidden="true"></i></button></div></div></div></div><h3>Formati regionali</h3><div class="settings-fields">
+<label>Regione<select data-pref="region"><option value="auto">Sistema</option><option value="it-IT">Italia</option><option value="en-US">United States</option><option value="en-GB">United Kingdom</option><option value="fr-FR">France</option><option value="de-DE">Deutschland</option><option value="es-ES">España</option><option value="pt-PT">Portugal</option><option value="pt-BR">Brasil</option><option value="nl-NL">Nederland</option><option value="pl-PL">Polska</option><option value="ru-RU">Россия</option><option value="ja-JP">日本</option><option value="ko-KR">대한민국</option><option value="zh-CN">中国</option><option value="ar-SA">السعودية</option><option value="hi-IN">भारत</option></select></label>
+<label>Data<select data-pref="dateFormat"><option value="auto">Regionale</option><option value="dmy">31/12/2026</option><option value="mdy">12/31/2026</option><option value="ymd">2026-12-31</option></select></label>
+<label>Ora<select data-pref="hourFormat"><option value="auto">Regionale</option><option value="24">24 ore</option><option value="12">12 ore</option></select></label>
+<div class="setting-row"><span>Esempio</span><output id="regional-preview"></output></div>
+</div></section>
+<section class="preferences-section" data-settings-page="models" hidden>
+<h3>Modelli</h3>
+<div class="settings-fields"><button type="button" class="constructive" data-open-setup hidden>Completa configurazione</button><label>Modello all’avvio<select id="preference-model"></select></label><section class="advice-settings settings-fields"><h3>Suggerimenti</h3><label>Uso principale<select data-pref="purpose" data-numeric><option value="0">Uso generale</option><option value="1">Programmazione</option><option value="2">Studio</option><option value="3">Scrittura e traduzione</option><option value="4">Contabilità</option><option value="5">Diritto</option></select></label><label>Priorità<select data-pref="adviceGoal" data-numeric><option value="0">Automatico</option><option value="1">Rapidità</option><option value="2">Qualità</option><option value="3">Memoria ridotta</option></select></label><label class="check"><span>Consigli sui nuovi modelli</span><input data-pref="adviceNotices" type="checkbox" role="switch"></label><label class="check"><span>Personalizzazione suggerimenti</span><input data-pref="adviceLearning" type="checkbox" role="switch" aria-describedby="advice-privacy"></label><p id="advice-privacy" class="muted">La personalizzazione avviene interamente sul dispositivo, senza inviare dati all’esterno.</p><div class="row advice-setting-actions"><button type="button" id="reset-advice">Cancella apprendimento</button></div></section><section class="runtime-settings"><div class="row"><h3>Motori locali</h3><button type="button" id="detect-engines" class="icon-button engine-discovery" aria-label="Rileva motori locali" data-tip="Rileva motori locali"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg></button><button type="button" id="add-engine" class="icon-button constructive" aria-label="Aggiungi motore locale" data-tip="Aggiungi motore locale"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button></div><div id="engine-list"></div><div id="engine-installations" class="settings-fields"></div><p id="engine-status" hidden></p><button type="button" class="constructive" data-open-connection>Collega un server</button></section>
+</div>
+</section>
+<section class="preferences-section" data-settings-page="chat" hidden><h3>Chat</h3><div class="settings-fields">
+<label>Lingua di scrittura<select data-pref="inputLanguage"><option value="auto">Automatica</option><option value="it" translate="no">Italiano</option><option value="en">English</option><option value="fr">Français</option><option value="es">Español</option><option value="de">Deutsch</option><option value="pt">Português</option><option value="ru">Русский</option><option value="zh">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+<label>Invia con<select data-pref="shortcut"><option value="enter">Invio</option><option value="ctrl_enter">⌘/Ctrl + Invio</option><option value="shift_enter">Maiusc + Invio</option></select></label>
+<div class="setting-row assistant-style-setting"><div class="row"><label for="preference-system">Stile dell’assistente</label><button type="button" id="reset-assistant-style" class="icon-button" aria-label="Ripristina stile di base" data-tip="Ripristina stile di base"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg></button></div><textarea id="preference-system" data-pref="system" rows="4" maxlength="4096" spellcheck="false"></textarea></div>
+<label class="check"><span>Controllo ortografico</span><input data-pref="spellcheck" type="checkbox" role="switch"></label>
+<label class="check"><span>A capo nei blocchi di codice</span><input data-pref="codeWrap" type="checkbox" role="switch"></label>
+<label class="check"><span>Titoli automatici</span><input data-pref="titles" type="checkbox" role="switch"></label>
+<label class="check"><span>Riassunti del contesto</span><input data-pref="summaries" type="checkbox" role="switch"></label>
+<div class="setting-row"><span id="thinking-default-label">Ragionamento predefinito</span><div><select data-pref="thinkingMode" hidden aria-hidden="true" tabindex="-1"><option value="auto">Automatico</option></select><div class="visual-choices" data-choice-field="thinkingMode" role="radiogroup" aria-labelledby="thinking-default-label"></div></div></div>
+<label class="check prepared-setting"><span>Progetto nelle nuove chat</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label>
+<label class="check"><span>Miglioramento del prompt</span><input data-pref="improve" type="checkbox" role="switch"></label>
+<label>Scambi recenti inclusi<span class="range-control"><input data-pref="improveContext" type="range" min="0" max="8" step="1"><output id="improve-context-count">4</output></span></label>
+</div></section>
+<section class="preferences-section" data-settings-page="privacy" hidden><h3>Privacy</h3><section class="network-settings" aria-labelledby="network-title"><div class="network-heading"><label class="check"><span class="network-label"><span id="network-title">Accesso a Internet</span><span id="network-state" class="network-status muted" aria-live="polite" hidden></span></span><input id="network-master" data-pref="internet" type="checkbox" role="switch" aria-labelledby="network-title" aria-describedby="network-state"></label><button type="button" id="network-expand" class="icon-button" aria-label="Permessi di Internet" aria-expanded="false" aria-controls="network-permissions"><svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></div><div id="network-permissions" class="settings-fields" hidden><label class="check"><span>Cataloghi online</span><input data-network="1" type="checkbox" role="switch"></label><label class="check"><span>Download modelli</span><input data-network="2" type="checkbox" role="switch"></label><label class="check"><span>Download motori</span><input data-network="4" type="checkbox" role="switch"></label><label class="check"><span>Server remoti</span><input data-network="8" type="checkbox" role="switch"></label></div></section><div class="settings-fields"><label class="check prepared-setting"><span>Identificazione dei contenuti AI</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label></div></section>
+<section class="preferences-section" data-settings-page="storage" hidden>
+<h3>Archiviazione</h3>
+<div class="settings-fields">
+<div class="setting-card">
+<h3>Posizione dei dati</h3>
+<div id="data-location-status" role="status"></div>
+<div class="file-actions">
+<button type="button" data-location-action="change">Cambia cartella</button>
+<button type="button" data-location-action="default">Usa cartella predefinita</button>
+<button type="button" data-location-action="cancel" hidden>Annulla cambio</button>
+<button type="button" data-location-action="restart" hidden>Riavvia OverTone</button>
+</div>
+</div>
+<div class="setting-card">
+<h3>Dati locali</h3>
+<p>Conversazioni, impostazioni e riferimenti ai modelli.</p>
+<div class="file-actions">
+<button type="button" id="backup">Crea backup</button>
+<button type="button" id="export">Esporta conversazioni</button>
+<button type="button" id="restore">Ripristina backup</button>
+</div>
+<p id="file-result" role="status">
+</p>
+</div>
+<label>Backup automatici<select disabled>
+<option>Non attivi</option>
+</select>
+</label>
+</div>
+</section>
+<section class="preferences-section" data-settings-page="knowledge" hidden><h3>Documenti</h3><div class="settings-fields"><label class="check prepared-setting"><span>Parser documenti</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Sincronizzazione cartelle</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Pagine web salvate</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>RAG</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label></div></section>
+<section class="preferences-section" data-settings-page="tools" hidden><h3>Strumenti</h3><div class="settings-fields"><label class="check prepared-setting"><span>Esecuzione degli strumenti</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Esecuzione shell</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Esecuzione Python</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Connettori MCP</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label></div></section>
+<section class="preferences-section" data-settings-page="api" hidden><h3>API</h3><div class="settings-fields"><label class="check prepared-setting"><span>Server API locale</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Connettori MCP</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Browser web</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><div class="setting-card"><h3>Server compatibile</h3><p>API Ollama o compatibili con OpenAI, su questo computer o su un’altra macchina.</p><button type="button" class="constructive" data-open-connection>Collega un server</button></div></div><div class="setting-card"><h3>Servizi online</h3><div class="provider-choices"><button type="button" class="choice-card" disabled><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg><strong>Integrazioni con servizi AI</strong><small>Non ancora disponibile</small></button></div></div></section>
+<section class="preferences-section" data-settings-page="diagnostics" hidden>
+<h3>Diagnostica</h3>
+<div class="settings-fields">
+<div class="setting-row"><span id="logging-label">Livello di logging</span><div>
+<select data-pref="logLevel" hidden aria-hidden="true" tabindex="-1"><option value="error">Error</option><option value="warning">Warning</option><option value="info">Info</option><option value="debug">Debug</option></select>
+<div class="visual-choices" data-choice-field="logLevel" role="radiogroup" aria-labelledby="logging-label"><button type="button" role="radio" data-value="error">Error</button><button type="button" role="radio" data-value="warning">Warning</button><button type="button" role="radio" data-value="info">Info</button><button type="button" role="radio" data-value="debug">Debug</button></div>
+</div></div>
+<label class="check"><span>Diagnostica sviluppatore</span><input data-pref="developer" type="checkbox" role="switch"></label>
+<section id="developer-diagnostics" hidden><div class="file-actions"><span id="diagnostic-status" role="status"></span><button type="button" id="refresh-diagnostics"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Rileggi stato</button></div><pre id="diagnostic-output" tabindex="0" hidden></pre></section>
+<div class="setting-card">
+<h3>Diagnostica locale</h3>
+<p>Stato, risorse ed errori del motore, senza contenuti delle conversazioni.</p>
+<button type="button" data-open-details>Apri dettagli</button>
+</div>
+<label>Invio diagnostica<select disabled>
+<option>Disattivato</option>
+</select>
+</label>
+</div>
+</section>
+<section class="preferences-section" data-settings-page="labs" hidden><h3>Sperimentale</h3><div class="settings-fields"><label class="check prepared-setting"><span>Funzioni sperimentali</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Retrieval sperimentale</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label><label class="check prepared-setting"><span>Flussi di lavoro</span><input type="checkbox" role="switch" disabled data-tip="Non ancora disponibile"></label></div></section>
+<section class="preferences-section" data-settings-page="about" hidden>
+<h3>Informazioni</h3>
+<div class="settings-fields">
+<div class="about-mark">
+<span class="logo"><img src="OverTone.svg" alt="" draggable="false"></span>
+<h3>OverTone</h3>
+</div>
+<p>Spazio di lavoro personale con intelligenza artificiale.</p>
+<dl class="metadata">
+<div>
+<dt>Licenza</dt>
+<dd>Apache-2.0</dd>
+</div>
+<div>
+<dt>Versione</dt>
+<dd>0.1.0 · <span>sviluppo</span></dd>
+</div>
+<div><dt>Telemetria</dt><dd>Nessuna</dd></div>
+</dl>
+<button type="button" id="show-notices">Licenze dei componenti</button>
+<section class="setting-card"><h3>Risorse del computer</h3><dl class="metadata" id="about-resources"></dl></section>
+</div>
+</section>
+</div>
+</div>
+<div class="dialog-footer">
+<p id="preferences-error" role="alert" data-feedback>
+</p>
+<button type="button" id="reset-preferences" class="reset-settings"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Ripristina impostazioni</button>
+</div>
+</form>
+</dialog>  <dialog id="rename-dialog" aria-labelledby="rename-heading">
+    <h2 id="rename-heading">Rinomina conversazione</h2>
+    <form id="rename-form">
+      <label>Titolo<input id="new-title" maxlength="240" required>
+</label>
+      <p id="rename-error" role="alert" data-feedback>
+</p>
+      <button id="cancel-rename" type="button">Annulla</button>
+<button class="primary">Salva titolo</button>
+    </form>
+  </dialog>
+<dialog id="setup-dialog" class="configuration-dialog" aria-labelledby="setup-heading">
+<div class="dialog-heading"><h2 id="setup-heading">Inizia con OverTone</h2><button type="button" id="close-setup" class="icon-button" aria-label="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+<div class="configuration-content">
+<section id="setup-start"><div class="choice-grid">
+<button type="button" id="setup-local" class="choice-card"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg><span class="choice-copy"><strong>Sul computer</strong><small>Modelli locali, dati sul tuo computer</small></span><svg class="icon library-disclosure" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+<button type="button" id="setup-compatible" class="choice-card"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg><span class="choice-copy"><strong>Server compatibile</strong><small>Ollama · OpenAI API</small></span><svg class="icon library-disclosure" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+<button type="button" class="choice-card" disabled><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg><span class="choice-copy"><strong>Servizi AI</strong><small>Non ancora disponibile</small></span></button>
+</div></section>
+<section id="setup-choose" hidden><div class="configuration-options"><div class="configuration-group"><h3>Uso principale</h3><button type="button" id="setup-purpose-menu" class="option-summary" aria-haspopup="menu" aria-controls="setup-purposes" aria-expanded="false"></button></div><div class="configuration-group"><h3>Motori</h3><button type="button" id="setup-engine-menu" class="option-summary" data-menu-align="end" aria-haspopup="menu" aria-controls="setup-engines" aria-expanded="false"></button></div><div class="configuration-group"><h3>Dimensione modello</h3><button type="button" id="setup-size-menu" class="option-summary" data-menu-align="end" aria-haspopup="menu" aria-controls="setup-sizes" aria-expanded="false"></button></div></div><div id="setup-sizes" class="option-menu" popover="auto" role="menu" aria-label="Dimensione modello"></div><div id="setup-purposes" class="option-menu" popover="auto" role="menu" aria-label="Uso principale"></div><div id="setup-engines" class="option-menu" popover="auto" role="menu" aria-label="Motori"><button type="button" id="setup-ollama" data-engine="2" role="menuitemcheckbox"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Ollama</span></button><button type="button" id="setup-llama" data-engine="1" role="menuitemcheckbox"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>llama.cpp</span></button></div><div id="setup-models" class="choice-grid"></div><div id="setup-suggestions" class="configuration-ready" role="status" hidden></div><label id="setup-consent-row" class="check"><span>Consenti accesso a Internet</span><input id="setup-consent" type="checkbox" role="switch"></label></section>
+<section id="setup-reuse" hidden><div class="search-control"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-search"/></svg><input id="setup-existing-query" type="search" maxlength="256" aria-label="Cerca installati" placeholder="Cerca installati"></div><div id="setup-existing-models" class="configuration-list"></div><div class="file-actions"><button type="button" id="setup-import">Importa GGUF</button><button type="button" id="setup-server">Server compatibile</button></div></section>
+<section id="setup-work" hidden><div id="setup-jobs" class="configuration-list"></div></section>
+<section id="setup-summary" hidden></section>
+<p id="setup-error" data-feedback role="status" hidden></p>
+</div>
+<div class="dialog-footer"><button type="button" id="skip-setup">Più tardi</button><button type="button" id="setup-existing" class="constructive">Usa ciò che hai già</button><button type="button" id="setup-engines-only" hidden>Solo motori</button><button type="button" id="setup-back">Indietro</button><button type="button" id="setup-action" class="primary" hidden>Prepara e avvia</button></div>
+</dialog>
+<dialog id="model-parameters" aria-labelledby="model-parameters-heading">
+<div class="dialog-heading"><h2 id="model-parameters-heading">Parametri del modello</h2><button type="button" id="close-model-parameters" class="icon-button" aria-label="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+<form id="model-parameters-form" class="model-parameter-form"></form>
+</dialog>
+<dialog id="action-dialog" aria-labelledby="action-dialog-heading">
+<div class="dialog-heading"><h2 id="action-dialog-heading"></h2><button type="button" id="close-action-dialog" class="icon-button" aria-label="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+<p id="action-error" role="alert" data-feedback hidden></p>
+<div id="action-dialog-body"></div>
+<div id="action-dialog-actions" class="dialog-footer"></div>
+</dialog>
+<div id="tooltip" role="tooltip" popover="manual">
+</div>
+<div id="model-popover" class="option-menu" popover="auto" role="dialog" aria-label="Scegli modello">
+</div>
+<div id="compose-overflow" class="option-menu composer-overflow" popover="auto" role="menu" aria-label="Altri comandi" tabindex="-1"></div>
+<div id="thinking-popover" class="option-menu" popover="auto" role="menu" aria-label="Ragionamento">
+</div>
+
+<div id="chat-removal" popover="auto" class="action-menu" role="menu"><button id="move-trash" type="button" class="danger" role="menuitem"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>Sposta nel cestino</button><button type="button" id="delete-chat" class="danger" role="menuitem" aria-label="Elimina definitivamente" data-tip="Elimina definitivamente"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>Elimina definitivamente</button></div>
+<dialog id="model-advice" class="configuration-dialog advice-dialog"><header class="dialog-heading"><h2>Consigliati per te</h2><button type="button" id="close-advice" class="icon-button" aria-label="Chiudi" data-tip="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></header><div class="configuration-content"><div class="row advice-context"><span id="advice-context"></span><button type="button" id="advice-preferences" class="icon-button" aria-label="Preferenze dei suggerimenti" data-tip="Preferenze dei suggerimenti"><svg class="icon" aria-hidden="true"><use href="#i-sliders-horizontal"/></svg></button></div><div id="advice-options" class="choice-grid"></div><p id="advice-status" role="status" hidden></p><div id="advice-dismissed" class="row" hidden><span id="advice-dismissed-count" class="muted"></span><button type="button" id="restore-advice">Riconsidera</button></div></div><footer class="dialog-footer"><button type="button" id="refresh-advice"><svg class="icon" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span>Aggiorna</span></button><span class="grow"></span><button type="button" id="acquire-advice" class="primary">Scarica</button></footer></dialog>
+<div id="feature-guide" class="floating-surface feature-guide" popover="manual" role="dialog" aria-labelledby="guide-heading" aria-describedby="guide-description"><div class="row"><strong id="guide-heading"></strong><span class="grow"></span><button type="button" id="skip-guide" class="icon-button" aria-label="Salta guida" data-tip="Salta guida"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div><p id="guide-description"></p><div class="row"><span id="guide-position" class="muted"></span><span class="grow"></span><button type="button" id="previous-guide">Indietro</button><button type="button" id="next-guide">Avanti</button></div></div>
+</body>
+</html>

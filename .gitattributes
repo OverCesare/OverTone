@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.png binary
+*.icns binary
+*.sqlite binary
+*.gguf binary
+*.car binary
+*.dmg binary
+*.zip binary
+*.mp4 binary
+*.webp binary
+*.jpg binary

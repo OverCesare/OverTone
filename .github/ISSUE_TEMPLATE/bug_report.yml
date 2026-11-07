@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a problem with OverTone.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues before opening a new one. Describe one problem per report.
+        Never include passwords, API keys, private conversations, or unredacted personal information.
+        For a security vulnerability, follow SECURITY.md instead of posting the details here.
+  - type: input
+    id: environment
+    attributes:
+      label: OverTone and macOS versions
+      description: Include both versions. If you cannot find a version, say so.
+      placeholder: OverTone 0.1.0, macOS 15.0
+    validations:
+      required: true
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: What happened, and what did you expect?
+      description: Explain the problem and the result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can we reproduce it?
+      description: Describe the steps. If it happens intermittently, explain the circumstances as clearly as you can.
+    validations:
+      required: true
+  - type: input
+    id: model-and-engine
+    attributes:
+      label: Model and engine, if relevant
+      description: Add the model, engine, and whether it runs locally or on a remote server. Do not include server credentials.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional screenshots, a short recording, or relevant log excerpts. Remove private information first; full logs are not required.
