@@ -31,6 +31,10 @@ The project site address is https://overcesare.github.io/OverTone/.
 Verify links and downloads under that path, including the trailing slash.
 
 The trailer uses the official YouTube privacy-enhanced iframe, created only when
-the visitor selects its local cover. Keep its direct YouTube link as a fallback
+the visitor selects its local cover button. Keep the noscript YouTube link as a fallback
 and keep privacy.html aligned with third-party connections. Walkthroughs remain
 local video files. No YouTube SDK or API key is required.
+
+CSS and JavaScript URLs include the first 12 characters of their SHA-256 in a
+v query parameter. Update those references when the file changes so a new page
+cannot reuse an incompatible script or stylesheet from a previous deployment.

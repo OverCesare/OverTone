@@ -60,11 +60,9 @@ if (player) {
 }
 const trailerCover = document.getElementById("trailer-cover");
 if (trailerCover) {
-  const videoId = new URL(trailerCover.href).searchParams.get("v");
+  const videoId = trailerCover.dataset.videoId;
   if (/^[a-zA-Z0-9_-]{11}$/.test(videoId || "")) {
-    trailerCover.addEventListener("click", event => {
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !/^https?:$/.test(location.protocol)) return;
-      event.preventDefault();
+    trailerCover.addEventListener("click", () => {
       if (player) player.pause();
       const frame = document.createElement("iframe");
       frame.title = "OverTone 0.1 — YouTube trailer";
@@ -76,7 +74,8 @@ if (trailerCover) {
       frame.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&playsinline=1&rel=0";
       trailerCover.replaceWith(frame);
       frame.focus({preventScroll:true});
-    });
+    }, {once:true});
+    trailerCover.disabled = false;
   }
 }
 document.addEventListener("visibilitychange", () => { if (document.hidden && player) player.pause(); });
