@@ -1,20 +1,15 @@
 "use strict";
 const config = window.OVERTONE_SITE || {};
 const clips = window.OVERTONE_CLIPS || [];
-const dialog = document.getElementById("trailer-dialog");
-const trailer = document.getElementById("trailer-video");
 const player = document.getElementById("clip-video");
 const playButton = document.getElementById("clip-play");
 const tabs = [...document.querySelectorAll("[data-clip]")];
-let lastTrailerTrigger = null;
 function safeURL(value) {
   try { const u = new URL(value); return u.protocol === "https:" ? u.href : null; }
   catch { return null; }
 }
 const repo = safeURL(config.repository);
 if (repo) document.querySelectorAll(".repo-link").forEach(link => { link.href = repo; link.hidden = false; });
-const youtube = safeURL(config.youtubeTrailer);
-if (youtube && document.getElementById("youtube-link")) { const link = document.getElementById("youtube-link"); link.href = youtube; link.hidden = false; }
 const canonical = safeURL(config.canonical);
 if (canonical) {
   let link = document.querySelector('link[rel="canonical"]'); if (!link) { link = document.createElement("link"); link.rel = "canonical"; document.head.append(link); } link.href = canonical;
@@ -63,20 +58,25 @@ if (player) {
   });
   document.getElementById("clip-select").addEventListener("change", event => selectClip(event.target.value));
 }
-if (dialog) {
-  document.querySelectorAll("[data-trailer]").forEach(button => button.addEventListener("click", () => {
-    lastTrailerTrigger = button;
-    if (player) player.pause();
-    dialog.showModal();
-    play(trailer);
-  }));
-  document.getElementById("close-trailer").addEventListener("click", () => dialog.close());
-  dialog.addEventListener("click", event => {
-    if (event.target === dialog) {
-      const rect = dialog.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-    }
-  });
-  dialog.addEventListener("close", () => { trailer.pause(); if (lastTrailerTrigger) lastTrailerTrigger.focus(); });
+const trailerCover = document.getElementById("trailer-cover");
+if (trailerCover) {
+  const videoId = new URL(trailerCover.href).searchParams.get("v");
+  if (/^[a-zA-Z0-9_-]{11}$/.test(videoId || "")) {
+    trailerCover.addEventListener("click", event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !/^https?:$/.test(location.protocol)) return;
+      event.preventDefault();
+      if (player) player.pause();
+      const frame = document.createElement("iframe");
+      frame.title = "OverTone 0.1 — YouTube trailer";
+      frame.width = "1920";
+      frame.height = "1080";
+      frame.allow = "autoplay; encrypted-media; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      frame.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&playsinline=1&rel=0";
+      trailerCover.replaceWith(frame);
+      frame.focus({preventScroll:true});
+    });
+  }
 }
-document.addEventListener("visibilitychange", () => { if (document.hidden) { if (player) player.pause(); if (trailer) trailer.pause(); } });
+document.addEventListener("visibilitychange", () => { if (document.hidden && player) player.pause(); });

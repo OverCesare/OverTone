@@ -29,3 +29,8 @@ A Pages site can be public even when its source repository is private.
 
 The project site address is https://overcesare.github.io/OverTone/.
 Verify links and downloads under that path, including the trailing slash.
+
+The trailer uses the official YouTube privacy-enhanced iframe, created only when
+the visitor selects its local cover. Keep its direct YouTube link as a fallback
+and keep privacy.html aligned with third-party connections. Walkthroughs remain
+local video files. No YouTube SDK or API key is required.
