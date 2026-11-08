@@ -10,7 +10,7 @@ If Discussions or the categories below are not available yet, open an issue for 
 - Questions and setup help: use Discussions → Q&A.
 - Ideas and experience feedback: use Discussions → Ideas & feedback. Explain what you are trying to do, where the current experience falls short, and any workaround you have tried. You do not need to design a solution or write code.
 - Security vulnerabilities: follow the [security policy](SECURITY.md), using the repository’s private “Report a vulnerability” option when available. Do not post sensitive details in a public issue or discussion.
-- Updates: see Releases for published versions and their known limitations. The [README](README.md) describes current capabilities and will link to the public roadmap when available.
+- Updates: see Discussions → Announcements for development updates. The [README](README.md) describes the current capabilities and limitations.
 
 Search for an existing issue or discussion first. Add useful details to an existing thread instead of opening a duplicate; a reaction is enough to express support. If you are unsure where something belongs, ask in Q&A and it can be moved to the right place. Never include passwords, API keys, private conversations, or unredacted personal information in reports or attachments.
 
